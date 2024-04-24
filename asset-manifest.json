@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/qodana-test/static/css/main.69f9a6da.css",
+    "main.js": "/qodana-test/static/js/main.f6bfa8c1.js",
+    "index.html": "/qodana-test/index.html",
+    "main.69f9a6da.css.map": "/qodana-test/static/css/main.69f9a6da.css.map",
+    "main.f6bfa8c1.js.map": "/qodana-test/static/js/main.f6bfa8c1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69f9a6da.css",
+    "static/js/main.f6bfa8c1.js"
+  ]
+}
