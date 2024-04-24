@@ -21,8 +21,9 @@ This project is a registration form designed with accessibility in mind. The pri
 
 ### How to Run the Project
 
-To run the project, clone the repository and then use such commands:
+To run the project use such commands:
 ```bash
+ git clone https://github.com/SKom2/qodana-test.git
  yarn install
  yarn start
 ```
