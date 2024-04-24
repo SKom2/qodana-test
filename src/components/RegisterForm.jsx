@@ -3,13 +3,26 @@ import Email from "../assets/icons/Email";
 import Input from "./Input";
 import Lock from "../assets/icons/Lock";
 import UserIcon from "../assets/icons/UserIcon";
+import { useNavigate } from "react-router-dom";
+import {homePath} from "../constants/routes";
 
-const Register = () => {
+const RegisterForm = () => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [username, setUsername] = React.useState('');
     const [error, setError] = React.useState('');
+    const navigate = useNavigate()
 
+    const submitRegistrationForm = (e) => {
+        e.preventDefault();
+        console.log("Here should be implemented registration logic")
+        if (email && password && username) {
+            navigate(homePath)
+            setError('')
+        } else {
+            setError("Please fulfill all inputs")
+        }
+    }
 
     return (
         <div
@@ -18,7 +31,7 @@ const Register = () => {
                 <h1 className="text-3xl font-bold mb-2">Welcome!</h1>
                 <h2 className="text-gray-400 text-xl">Please enter your account here</h2>
             </div>
-            <form>
+            <form onSubmit={submitRegistrationForm}>
                 <div className="flex flex-col gap-6">
                     <Input
                         name="email"
@@ -27,7 +40,7 @@ const Register = () => {
                         placeholder="Email"
                         type="email"
                     >
-                        <Email />
+                        <Email/>
                     </Input>
                     <Input
                         name="password"
@@ -36,7 +49,7 @@ const Register = () => {
                         placeholder="Password"
                         type="password"
                     >
-                        <Lock />
+                        <Lock/>
                     </Input>
                     <Input
                         name="username"
@@ -45,10 +58,11 @@ const Register = () => {
                         placeholder="Username"
                         type="text"
                     >
-                        <UserIcon />
+                        <UserIcon/>
                     </Input>
                 </div>
-                <button className="bg-button w-full text-center text-white rounded py-4 mt-16">
+                <span className="text-red-600 text-center w-full block text-xs mt-4">{error && error}</span>
+                <button className="bg-button w-full text-center text-white rounded py-4 mt-16" type="submit">
                     Register
                 </button>
             </form>
@@ -56,4 +70,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default RegisterForm;

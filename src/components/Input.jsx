@@ -26,7 +26,7 @@ const Input = ({ children, type, name, placeholder, onChange, value }) => {
             />
             {type === 'password' && (
                 <button className="absolute right-3" onClick={showPassword}>
-                    {isShown ?  <EyeSlashed /> : <Eye />}
+                    {isShown ?  <Eye /> : <EyeSlashed />}
                 </button>
             )}
         </label>
