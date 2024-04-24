@@ -23,6 +23,7 @@ const Input = ({ children, type, name, placeholder, onChange, value }) => {
                 placeholder={placeholder}
                 onChange={onChange}
                 value={value}
+                autoComplete="off"
             />
             {type === 'password' && (
                 <button className="absolute right-3" onClick={showPassword}>

@@ -6,7 +6,7 @@ import {basePath, homePath, registerPath} from "./constants/routes";
 const App = () => {
   return (
       <Routes>
-          <Route path={basePath} element={<Navigate replace to={registerPath} />}/>
+          <Route path='/' element={<Navigate replace to={registerPath} />}/>
           <Route path={registerPath} element={<Register />} />
           <Route path={homePath} element={<Home />} />
       </Routes>
@@ -15,7 +15,7 @@ const App = () => {
 
 const WrappedApp = () => {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={basePath}>
         <App />
       </BrowserRouter>
   );
